@@ -1,0 +1,74 @@
+#pragma once
+
+#include <iostream>
+#include "clsDoublyLinkedList.h"
+using namespace std;
+
+template <class t_c>
+class clsQueue {
+    
+    protected:
+        clsDoublyLinkedList <t_c> _node;
+
+    public:
+
+        void push(t_c data){
+            _node.insert_at_end(data);
+        }
+
+        void pop(void){
+            _node.del_first_node();
+        }
+
+        int size(void){
+            return _node.size();
+        }
+
+        t_c front(void){
+            return _node.first_data();
+        }
+
+        t_c back(void){
+            return _node.last_data();
+        }
+
+        bool empty(void){
+            return _node.empty();
+        }
+
+        void print(void){
+            _node.print();
+        }
+
+        t_c get(int index){
+            return _node.get(index);
+        }
+
+        void reverse(void){
+            _node.reverse();
+        }
+
+        void update(int index, t_c data){
+            _node.update(index, data);
+        } 
+
+
+        void insert_after(int index, t_c data){
+            _node.insert_after(index, data);
+        }
+
+        void insert_at_front(t_c data){
+            _node.insert_at_beginning(data);
+        }
+        
+        void insert_at_back(t_c data){
+            _node.insert_at_end(data);
+        }
+
+        void cls(void){
+            _node.cls();
+        }
+
+
+};
+
